@@ -1,0 +1,66 @@
+export type GitHubRepo = {
+  id: number;
+  name: string;
+  full_name: string;
+
+  private: boolean;
+  visibility: "public" | "private";
+
+  html_url: string;
+  description: string | null;
+  homepage: string | null;
+
+  created_at: string;
+  updated_at: string;
+  pushed_at: string;
+
+  language: string | null;
+  topics: string[];
+
+  stargazers_count: number;
+  watchers_count: number;
+  forks_count: number;
+
+  size: number;
+  default_branch: string;
+
+  fork: boolean;
+  archived: boolean;
+  disabled: boolean;
+
+  has_issues: boolean;
+  has_projects: boolean;
+  has_downloads: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_discussions: boolean;
+
+  open_issues_count: number;
+
+  clone_url: string;
+  ssh_url: string;
+  svn_url: string;
+
+  owner: {
+    login: string;
+    id: number;
+    avatar_url: string;
+    url: string;
+  };
+
+  license: {
+    key: string;
+    name: string;
+    spdx_id: string | null;
+    url: string | null;
+  } | null;
+};
+
+export type cardType = {
+  id: number;
+  name: string;
+  description: string;
+  createdAt: string;
+  repoLink: string;
+  default_branch: string;
+};
