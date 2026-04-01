@@ -7,16 +7,14 @@ export function useFetchRepos() {
   useEffect(() => {
     async function fetchRepos() {
       try {
-        // TODO rimuovere chiamata con token
         setLoading(true);
         const res = await fetch(
-          "https://api.github.com/users/Hiroshisar/repos?sort=created&direction=desc",
-          {
-            headers: {
-              Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`
-            }
-          }
+          "https://api.github.com/users/Hiroshisar/repos?sort=created&direction=desc"
         );
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch repos");
+        }
 
         const data = await res.json();
         setRepos(data);
