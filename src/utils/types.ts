@@ -1,4 +1,4 @@
-export type GitHubRepo = {
+export type fetchedDataType = {
   id: number;
   name: string;
   full_name: string;
@@ -56,7 +56,7 @@ export type GitHubRepo = {
   } | null;
 };
 
-export type cardType = {
+export type repoDataType = {
   id: number;
   name: string;
   description: string;

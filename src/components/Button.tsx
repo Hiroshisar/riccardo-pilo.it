@@ -14,21 +14,21 @@ function Button({
   isDisabled?: boolean;
 }) {
   const baseStyle =
-    "rounded-sm px-2 py-0.5 sm:px-1.5 sm:py-1 text-center align-middle transition duration-500 hover:scale-105";
+    "flex items-center justify-center rounded-md px-2 sm:px-1.5 text-center transition duration-500 hover:scale-105";
   let className = "";
 
   switch (style) {
     case "primary":
       className =
-        "h-8 bg-primary hover:bg-primary-complement hover:shadow-primary shadow-sm shadow-primary-complement text-smallBtn sm:text-primaryBtn";
+        "h-12 bg-primary hover:bg-primary-complement hover:shadow-primary shadow-sm shadow-primary-complement text-smallBtn sm:text-primaryBtn";
       break;
     case "secondary":
       className =
-        "h-6 bg-secondary hover:bg-secondary-complement shadow-sm shadow-secondary-complement hover:shadow-secondary text-smallBtn sm:text-secondaryBtn";
+        "h-10 bg-secondary hover:bg-secondary-complement shadow-sm shadow-secondary-complement hover:shadow-secondary text-smallBtn sm:text-secondaryBtn";
       break;
     case "navbar":
       className =
-        "flex h-6 px-2 py-1.5 sm:px-3 sm:py-1 text-smallBtn sm:text-secondaryBtn text-navbar-text hover:text-white bg-trasparent hover:bg-primary hover:shadow-lg my-auto";
+        "flex h-8 px-3 sm:px-5 sm:h-10 md:h-12 md:px-6 text-smallText sm:text-mediumText md:text-secondaryBtn text-navbar-text hover:text-white bg-trasparent hover:bg-primary hover:shadow-lg my-auto";
       break;
     default:
       className = "";

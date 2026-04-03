@@ -3,11 +3,11 @@ import Logo from "./Logo";
 
 function NavBar() {
   return (
-    <div className="from-primary to-primary-complement flex h-10 gap-2 border bg-linear-to-l sm:h-15">
+    <div className="from-primary to-primary-complement flex h-15 gap-2 border bg-linear-to-l sm:h-20 md:h-25">
       <Logo />
       <div className="flex w-dvw justify-evenly">
         <Button to="/about" style="navbar">
-          Chi sono
+          Curriculum
         </Button>
         <Button to="/portfolio" style="navbar">
           Portfolio

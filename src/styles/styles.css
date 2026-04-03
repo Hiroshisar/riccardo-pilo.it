@@ -26,12 +26,14 @@
   --text-body-sm: 0.875rem;
   --text-body-sm--line-height: 1.6;
 
-  --text-label: 0.5rem;
+  --text-label: 0.6rem;
   --text-label--letter-spacing: 0.05em;
 
-  --text-primaryBtn: 12px;
-  --text-secondaryBtn: 10px;
-  --text-smallBtn: 7px;
+  --text-mediumText: 15px;
+  --text-smallText: 12px;
+
+  --text-primaryBtn: 24px;
+  --text-secondaryBtn: 18px;
 
   --color-primary: #1d80e1;
   --color-primary-complement: #1d59c1;
