@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "../components/Card";
-import { useFetchRepos } from "../hooks/useFetchRepos";
+/*
+import { useFetchRepos } from "../hooks/useFetchRepos";*/
 import type { fetchedDataType } from "../utils/types";
 import Spinner from "../components/Spinner";
 
@@ -102,6 +103,7 @@ const test: fetchedDataType[] = [
 
 function Portfolio() {
   const [curOpen, setIsOpen] = useState<number>(0);
+  // TODO: ripristinare l'hook e togliere i dati di test
   //const { repos, loading } = useFetchRepos();
 
   const loading = false;
