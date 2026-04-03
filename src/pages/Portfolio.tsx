@@ -112,7 +112,7 @@ function Portfolio() {
   if (loading) return <Spinner />;
 
   return (
-    <div>
+    <div className="mt-10">
       {repos.map((repo: fetchedDataType) => (
         <Card
           key={repo.id}

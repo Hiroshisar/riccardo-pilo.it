@@ -64,3 +64,11 @@ export type repoDataType = {
   repoLink: string;
   default_branch: string;
 };
+
+export type workDataType = {
+  startDate: string;
+  endDate: string;
+  type: string;
+  employer: string;
+  activities?: string[];
+};

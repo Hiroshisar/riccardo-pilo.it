@@ -1,6 +1,7 @@
 import { FaDownload, FaGithub, FaMinus, FaPlus } from "react-icons/fa6";
 import { formatDate } from "../utils/helpers";
 import type { repoDataType } from "../utils/types";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Card({
   card,
@@ -16,6 +17,7 @@ function Card({
   const handleToggle = () => {
     onOpen(isOpen ? -1 : card.id);
   };
+
   function handleDownload() {
     const url = `https://github.com/Hiroshisar/${card.name}/archive/refs/heads/${card.default_branch}.zip`;
 
@@ -33,48 +35,82 @@ function Card({
   };
 
   return (
-    <div
-      className="mx-auto mt-9 flex w-96 flex-col gap-6 sm:mt-15 sm:w-125 md:w-175"
-      onClick={handleToggle}
-    >
-      <div
-        className={`cursor-pointer items-center ${isOpen ? "rounded-lg" : "rounded-full"} border-t-4 border-b-4 border-white bg-white px-6 py-5 pr-12 shadow-[0_0_30px_rgba(0,0,0,0.15)]`}
+    <div className="mx-auto mt-5 w-full max-w-4xl px-4 sm:mt-12">
+      <motion.div
+        layout
+        onClick={handleToggle}
+        className={`cursor-pointer rounded-2xl border-y-4 border-white bg-white shadow-lg`}
+        transition={{
+          layout: {
+            duration: 0.4,
+            type: "spring",
+            bounce: 0.3
+          }
+        }}
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.99 }}
       >
-        <div className="grid align-middle">
-          <div className="flex">
-            <div className="w-20 rounded-md pl-5">{card.name}</div>
-            <div className="flex w-full justify-evenly gap-3 rounded-md">
-              <div className="ml-auto flex gap-10">
-                <FaGithub
-                  className="hover:text-primary size-5"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleRedirect();
-                  }}
-                />
-                <FaDownload
-                  className="hover:text-primary size-5"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDownload();
-                  }}
-                />
-              </div>
-              <div className="ml-auto">{isOpen ? <FaMinus /> : <FaPlus />}</div>
+        <div className="flex items-center justify-between gap-4 px-5 py-4 sm:px-8">
+          <span className="truncate text-sm font-semibold sm:text-base">
+            {card.name}
+          </span>
+
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4">
+              <FaGithub
+                className="hover:text-primary size-5 transition"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleRedirect();
+                }}
+              />
+              <FaDownload
+                className="hover:text-primary size-5 transition"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDownload();
+                }}
+              />
             </div>
+
+            <div className="bg-primary/60 h-5 w-px" />
+
+            <motion.div
+              className="hover:text-primary"
+              animate={{ rotate: isOpen ? 180 : 0 }}
+            >
+              {isOpen ? <FaMinus /> : <FaPlus />}
+            </motion.div>
           </div>
-          {isOpen && (
-            <div className="text-body-sm overflow-hidden rounded-md">
-              <div className="text-label text-subtitle mt-2 pl-5">
-                {card ? formatDate(card.createdAt) : ""}
-              </div>
-              <div className="text-body-sm text-primary-complement mt-3 text-right">
-                {card.description}
-              </div>
-            </div>
-          )}
         </div>
-      </div>
+
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              key="content"
+              initial={{ opacity: 0, height: 0, scale: 0.98 }}
+              animate={{ opacity: 1, height: "auto", scale: 1 }}
+              exit={{ opacity: 0, height: 0, scale: 0.98 }}
+              transition={{
+                duration: 0.35,
+                type: "spring",
+                bounce: 0.25
+              }}
+              className="overflow-hidden"
+            >
+              <div className="px-5 pb-5 sm:px-8">
+                <div className="mt-2 text-xs text-gray-500 sm:text-sm">
+                  {formatDate(card.createdAt)}
+                </div>
+
+                <div className="text-primary-complement mt-3 text-right text-sm sm:text-base">
+                  {card.description}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }
