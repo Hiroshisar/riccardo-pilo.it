@@ -1,10 +1,11 @@
-import type { workDataType } from "../utils/types";
+import type { curriculumDataType } from "../utils/types";
 
 export const about: string =
   "Avendo da sempre la passione per i computer e per le nuove tecnologie, ho intrapreso un percorso di studi che mi porterà a lavorare in ICT. Mi stimola l’idea di sviluppare sempre nuove abilità, imparo in fretta, cerco sempre la soluzione migliore ad ogni problema, e grazie alle esperienze lavorative passate ho sviluppato le mie capacità relazionali e di team working.";
 
-export const curriculumWorkData: workDataType[] = [
+export const curriculumWorkData: curriculumDataType[] = [
   {
+    year: 2025,
     startDate: "03/2025",
     endDate: "03/2025",
     type: "Stage",
@@ -16,6 +17,31 @@ export const curriculumWorkData: workDataType[] = [
     ]
   },
   {
+    year: 2025,
+    startDate: "03/2025",
+    endDate: "03/2025",
+    type: "Test 1",
+    employer: "Azienda 1",
+    activities: ["Attività 1.1", "Attività 1.2", "Attività 1.3"]
+  },
+  {
+    year: 2025,
+    startDate: "03/2025",
+    endDate: "03/2025",
+    type: "Test 2",
+    employer: "Azienda 2",
+    activities: ["Attività 2.1", "Attività 2.2", "Attività 2.3"]
+  },
+  {
+    year: 2023,
+    startDate: "07/2023",
+    endDate: "09/2023",
+    type: "Test 3",
+    employer: "Azienda 3",
+    activities: ["Attività 3.1", "Attività 3.2", "Attività 3.3"]
+  },
+  {
+    year: 2023,
     startDate: "03/2023",
     endDate: "04/2023",
     type: "Stage",
@@ -27,6 +53,7 @@ export const curriculumWorkData: workDataType[] = [
     ]
   },
   {
+    year: 2020,
     startDate: "12/2020",
     endDate: "12/2023",
     type: "Caregiver",
@@ -34,12 +61,14 @@ export const curriculumWorkData: workDataType[] = [
     activities: ["Assistenza a parente disabile (L.104/1992)"]
   },
   {
+    year: 2016,
     startDate: "06/2016",
     endDate: "10/2020",
-    type: "Call center operator",
+    type: "Call center",
     employer: "Konnexio S.C.R.L."
   },
   {
+    year: 2013,
     startDate: "10/2013",
     endDate: "05/2026",
     type: "Titolare",

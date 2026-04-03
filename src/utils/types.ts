@@ -65,7 +65,8 @@ export type repoDataType = {
   default_branch: string;
 };
 
-export type workDataType = {
+export type curriculumDataType = {
+  year: number;
   startDate: string;
   endDate: string;
   type: string;

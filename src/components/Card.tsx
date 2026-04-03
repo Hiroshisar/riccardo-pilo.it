@@ -35,7 +35,7 @@ function Card({
   };
 
   return (
-    <div className="mx-auto mt-5 w-full max-w-4xl px-4 sm:mt-12">
+    <div className="group mx-auto mt-5 w-full max-w-4xl px-4 sm:mt-12">
       <motion.div
         layout
         onClick={handleToggle}
@@ -73,7 +73,7 @@ function Card({
               />
             </div>
 
-            <div className="bg-primary/60 h-5 w-px" />
+            <div className="bg-primary h-5 w-px opacity-0 transition group-hover:opacity-100" />
 
             <motion.div
               className="hover:text-primary"

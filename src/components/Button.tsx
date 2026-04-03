@@ -4,20 +4,21 @@ function Button({
   children,
   onClick,
   to,
-  style,
+  type,
+  styled = "",
   isDisabled
 }: {
   children: string;
   onClick?: () => void;
   to?: string;
-  style?: string;
+  type: string;
+  styled?: string;
   isDisabled?: boolean;
 }) {
-  const baseStyle =
-    "flex items-center justify-center rounded-md px-2 sm:px-1.5 text-center transition duration-500 hover:scale-105";
+  const baseStyle = `flex items-center justify-center rounded-md px-2 sm:px-1.5 text-center transition duration-500 hover:scale-105 ${styled}`;
   let className = "";
 
-  switch (style) {
+  switch (type) {
     case "primary":
       className =
         "h-12 bg-primary hover:bg-primary-complement hover:shadow-primary shadow-sm shadow-primary-complement text-smallBtn sm:text-primaryBtn";

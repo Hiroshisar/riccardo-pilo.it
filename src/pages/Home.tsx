@@ -1,7 +1,9 @@
 import { about } from "../data/content";
 
 function Home() {
-  return <div>{about}</div>;
+  return (
+    <div className="text-body-sm sm:text-body md:text-body-lg">{about}</div>
+  );
 }
 
 export default Home;
