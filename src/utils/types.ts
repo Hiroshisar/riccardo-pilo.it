@@ -70,6 +70,29 @@ export type curriculumDataType = {
   startDate: string;
   endDate: string;
   type: string;
-  employer: string;
+  employer?: string;
+  school?: string;
+  link?: string;
   activities?: string[];
+};
+
+export type GroupedWork = {
+  year: number;
+  items: curriculumDataType[];
+};
+
+export type presentationType = {
+  main: string;
+  subtitle: string;
+};
+
+export type skillsDataType = {
+  activities: {
+    description: string;
+    activities: string[];
+  };
+  competences: {
+    title: string;
+    body: string;
+  }[];
 };
