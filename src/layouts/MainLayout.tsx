@@ -9,7 +9,6 @@ function MainLayout() {
         <NavBar />
       </div>
       <main className="flex-1 px-2 py-0.5">
-        {" "}
         <Outlet />
       </main>
       <div className="bottom-0">
