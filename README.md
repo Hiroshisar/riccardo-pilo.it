@@ -87,5 +87,3 @@ If deployed on static hosting (e.g. Netlify), ensure proper redirect rules are c
 
 All rights reserved.
 This project is not licensed for redistribution or reuse without explicit permission.
-
-```
