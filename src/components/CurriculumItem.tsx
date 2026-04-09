@@ -16,9 +16,11 @@ function CurriculumItem({ item }: { item: curriculumDataType }) {
         {item.employer ? item.employer : item.school}
       </div>
       {item.activities ? (
-        <ul className="text-mediumText sm:text-body-sm md:text-body mt-2 list-disc space-y-1 pl-10">
+        <ul className="text-body-sm md:text-body mt-2 list-disc space-y-1 pl-10">
           {item.activities.map((act, index) => (
-            <li key={index}>{act}</li>
+            <li key={index} className="mt-3">
+              {act}
+            </li>
           ))}
         </ul>
       ) : (

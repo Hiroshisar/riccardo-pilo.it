@@ -31,53 +31,59 @@ function Card({
   }
 
   const handleRedirect = () => {
-    window.open(card.repoLink);
+    window.open(card.repoLink, "_blank");
   };
 
   return (
-    <div className="group mx-auto mt-5 w-full max-w-4xl px-4 sm:mt-12">
+    <div className="mx-auto mt-6 w-full max-w-4xl px-4">
       <motion.div
         layout
         onClick={handleToggle}
-        className={`cursor-pointer rounded-2xl border-y-4 border-white bg-white shadow-lg`}
+        className="cursor-pointer rounded-2xl border border-white/20 bg-white/70 shadow-md backdrop-blur-md transition hover:shadow-xl"
         transition={{
           layout: {
-            duration: 0.4,
+            duration: 0.35,
             type: "spring",
-            bounce: 0.3
+            bounce: 0.25
           }
         }}
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
       >
-        <div className="flex items-center justify-between gap-4 px-5 py-4 sm:px-8">
-          <span className="truncate text-sm font-semibold sm:text-base">
-            {card.name}
-          </span>
+        <div className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div className="flex flex-col">
+            <span className="text-primary text-base font-semibold sm:text-lg">
+              {card.name}
+            </span>
+            <span className="text-subtitle text-xs">
+              Creato: {formatDate(card.createdAt)}
+            </span>
+          </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-4">
-              <FaGithub
-                className="hover:text-primary size-5 transition"
+          <div className="flex items-center justify-between gap-4 sm:justify-end">
+            <div className="flex items-center gap-2">
+              <button
                 onClick={(e) => {
                   e.stopPropagation();
                   handleRedirect();
                 }}
-              />
-              <FaDownload
-                className="hover:text-primary size-5 transition"
+                className="hover:text-primary-complement rounded-lg p-2 text-gray-600 transition hover:bg-gray-100"
+              >
+                <FaGithub className="size-5" />
+              </button>
+
+              <button
                 onClick={(e) => {
                   e.stopPropagation();
                   handleDownload();
                 }}
-              />
+                className="hover:text-primary-complement rounded-lg p-2 text-gray-600 transition hover:bg-gray-100"
+              >
+                <FaDownload className="size-5" />
+              </button>
             </div>
 
-            <div className="bg-primary h-5 w-px opacity-0 transition group-hover:opacity-100" />
-
             <motion.div
-              className="hover:text-primary"
               animate={{ rotate: isOpen ? 180 : 0 }}
+              className="hover:text-primary-complement rounded-lg p-2 text-gray-600 transition"
             >
               {isOpen ? <FaMinus /> : <FaPlus />}
             </motion.div>
@@ -88,24 +94,21 @@ function Card({
           {isOpen && (
             <motion.div
               key="content"
-              initial={{ opacity: 0, height: 0, scale: 0.98 }}
-              animate={{ opacity: 1, height: "auto", scale: 1 }}
-              exit={{ opacity: 0, height: 0, scale: 0.98 }}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
               transition={{
-                duration: 0.35,
-                type: "spring",
-                bounce: 0.25
+                duration: 0.3
               }}
-              className="overflow-hidden"
+              className="overflow-hidden border-t border-gray-200"
             >
-              <div className="px-5 pb-5 sm:px-8">
-                <div className="mt-2 text-xs text-gray-500 sm:text-sm">
-                  {formatDate(card.createdAt)}
+              <div className="px-5 py-4 sm:px-6">
+                <div className="text-primary-complement mb-2 ml-2 font-bold">
+                  {card.language}
                 </div>
-
-                <div className="text-primary-complement mt-3 text-right text-sm sm:text-base">
-                  {card.description}
-                </div>
+                <p className="text-sm leading-relaxed text-gray-700 sm:text-base">
+                  {card.description || "No description provided."}
+                </p>
               </div>
             </motion.div>
           )}

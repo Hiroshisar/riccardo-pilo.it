@@ -63,6 +63,7 @@ export type repoDataType = {
   createdAt: string;
   repoLink: string;
   default_branch: string;
+  language: string;
 };
 
 export type curriculumDataType = {
