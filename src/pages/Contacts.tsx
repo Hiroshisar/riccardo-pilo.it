@@ -1,4 +1,5 @@
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { GrDocumentPdf } from "react-icons/gr";
 
 function Contacts() {
   const contacts = [
@@ -19,6 +20,12 @@ function Contacts() {
       label: "GitHub",
       value: "Hiroshisar",
       link: "https://github.com/Hiroshisar"
+    },
+    {
+      icon: <GrDocumentPdf />,
+      label: "Curriculum",
+      value: "Riccardo Pilo",
+      link: "cv-pilo-2026.pdf"
     }
   ];
 
