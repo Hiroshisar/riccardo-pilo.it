@@ -63,8 +63,8 @@ export const curriculumWorkData: curriculumDataType[] = [
 export const curriculumAcademicData: curriculumDataType[] = [
   {
     year: 2012,
-    startDate: "01/2012",
-    endDate: "01/2012",
+    startDate: "01/2011",
+    endDate: "01/2011",
     type: "Diploma da perito industriale capotecnico",
     school: "I.T.I.S. G. Marconi",
     activities: [
