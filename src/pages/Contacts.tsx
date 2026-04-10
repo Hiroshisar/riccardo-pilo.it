@@ -31,7 +31,7 @@ function Contacts() {
 
   return (
     <div className="mt-10 flex justify-center px-4">
-      <div className="flex w-full max-w-3xl flex-wrap items-center justify-around gap-6 sm:flex-nowrap">
+      <div className="flex w-full max-w-3xl flex-col items-center justify-around gap-6 sm:flex-row">
         {contacts.map((item) => (
           <a
             key={item.label}

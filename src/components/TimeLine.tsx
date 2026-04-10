@@ -21,7 +21,7 @@ function TimeLine({
   ).sort((a, b) => b.year - a.year);
 
   return (
-    <div className="relative isolate mx-auto mt-10 max-w-5xl px-4">
+    <div className="relative isolate mx-auto mt-5 max-w-5xl px-4">
       <div className="bg-secondary-complement absolute top-0 left-1/2 z-0 h-full w-px -translate-x-1/2" />
 
       <div className="relative z-10 flex flex-col gap-20">

@@ -10,9 +10,9 @@ const tabs = [
 
 function Curriculum() {
   return (
-    <div className="mt-10 flex justify-center px-2 sm:px-4 md:px-0">
+    <div className="mt-10 flex justify-center overflow-x-hidden px-2 sm:px-4 md:px-0">
       <div className="w-full max-w-5xl">
-        <div className="flex flex-col gap-2 rounded-2xl bg-black/10 p-2 backdrop-blur-sm sm:flex-row">
+        <div className="flex flex-col gap-2 overflow-hidden rounded-2xl bg-black/10 p-2 backdrop-blur-sm sm:flex-row">
           {tabs.map((tab) => (
             <NavLink key={tab.path} to={tab.path} className="relative flex-1">
               {({ isActive }) => (

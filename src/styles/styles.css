@@ -42,3 +42,43 @@
   --color-navbar-text: #a9c5e1ff;
   --color-subtitle: #6b8fb2ff;
 }
+
+/* NASCOSTA di default */
+::-webkit-scrollbar {
+  width: 6px;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0);
+  border-radius: 999px;
+  transition: background 0.3s ease;
+}
+
+/* QUANDO SCROLLI */
+.scrolling ::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.4);
+}
+
+.dark.scrolling ::-webkit-scrollbar-thumb {
+  background: rgba(200, 200, 200, 0.4);
+}
+
+/* Firefox fallback */
+* {
+  scrollbar-width: none;
+}
+
+.scrolling * {
+  scrollbar-width: thin;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 120, 120, 0.3) transparent;
+}
+
+body {
+  overflow: hidden;
+}

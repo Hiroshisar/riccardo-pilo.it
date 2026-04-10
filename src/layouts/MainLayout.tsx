@@ -1,17 +1,25 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import ScrollProgress from "../components/ScrollProgress";
+import { useRef } from "react";
 
 function MainLayout() {
+  const mainRef = useRef<HTMLElement | null>(null);
+
   return (
-    <div className="font-lexend flex min-h-dvh w-dvw flex-col bg-gray-100">
-      <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md">
+    <div className="font-lexend flex h-screen flex-col bg-gray-100">
+      <ScrollProgress targetRef={mainRef} />
+
+      <div className="shrink-0">
         <NavBar />
       </div>
-      <main className="flex-1 px-2 py-0.5">
+
+      <main ref={mainRef} className="flex-1 overflow-y-auto px-2 py-0.5">
         <Outlet />
       </main>
-      <div className="bottom-0">
+
+      <div className="shrink-0">
         <Footer />
       </div>
     </div>

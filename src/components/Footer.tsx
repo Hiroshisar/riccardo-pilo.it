@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="from-primary to-primary-complement mt-5 flex h-15 gap-2 border bg-linear-to-l sm:h-20">
+    <div className="from-primary to-primary-complement flex h-10 gap-2 border bg-linear-to-l sm:h-12">
       <p className="text-smallText sm:text-mediumText text-navbar-text ml-10 flex items-center">
         © 2025 Riccardo Pilo — All rights reserved.
       </p>
