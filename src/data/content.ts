@@ -1,5 +1,6 @@
 import type {
   curriculumDataType,
+  languageDataType,
   presentationType,
   skillsDataType
 } from "../utils/types";
@@ -238,3 +239,14 @@ export const curriculumSkillsData: skillsDataType = {
     }
   ]
 };
+
+export const languageData: languageDataType = [
+  {
+    language: "Italiano",
+    level: "Madrelingua"
+  },
+  {
+    language: "Inglese",
+    level: "Avanzato"
+  }
+];

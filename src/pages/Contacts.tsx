@@ -30,7 +30,7 @@ function Contacts() {
   ];
 
   return (
-    <div className="mt-30 flex justify-center px-4">
+    <div className="mt-10 flex justify-center px-4">
       <div className="flex w-full max-w-3xl flex-wrap items-center justify-around gap-6 sm:flex-nowrap">
         {contacts.map((item) => (
           <a

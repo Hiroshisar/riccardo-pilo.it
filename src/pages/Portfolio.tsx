@@ -11,7 +11,7 @@ function Portfolio() {
   if (loading) return <Spinner />;
 
   return (
-    <div className="mx-auto mt-12 max-w-6xl px-4">
+    <div className="mx-auto mt-10 max-w-6xl px-4">
       <div className="mb-10">
         <h1 className="text-2xl font-semibold sm:text-3xl">Progetti</h1>
         <p className="mt-2 text-sm text-gray-500 sm:text-base">

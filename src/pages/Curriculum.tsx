@@ -10,7 +10,7 @@ const tabs = [
 
 function Curriculum() {
   return (
-    <div className="mt-5 flex justify-center px-2 sm:px-4 md:px-0">
+    <div className="mt-10 flex justify-center px-2 sm:px-4 md:px-0">
       <div className="w-full max-w-5xl">
         <div className="flex flex-col gap-2 rounded-2xl bg-black/10 p-2 backdrop-blur-sm sm:flex-row">
           {tabs.map((tab) => (

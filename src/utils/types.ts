@@ -97,3 +97,8 @@ export type skillsDataType = {
     body: string;
   }[];
 };
+
+export type languageDataType = {
+  language: string;
+  level: string;
+}[];

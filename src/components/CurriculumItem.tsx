@@ -25,7 +25,7 @@ function CurriculumItem({ item }: { item: curriculumDataType }) {
         </ul>
       ) : (
         item.link && (
-          <a href={item.link} target="_blank">
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
             My Open Badge
           </a>
         )
