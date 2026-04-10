@@ -62,7 +62,7 @@ export const curriculumWorkData: curriculumDataType[] = [
 
 export const curriculumAcademicData: curriculumDataType[] = [
   {
-    year: 2012,
+    year: 2011,
     startDate: "01/2011",
     endDate: "01/2011",
     type: "Diploma da perito industriale capotecnico",
