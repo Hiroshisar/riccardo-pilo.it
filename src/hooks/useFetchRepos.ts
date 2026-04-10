@@ -17,8 +17,6 @@ export function useFetchRepos() {
 
         const data = await res.json();
         setRepos(data);
-
-        console.log(data);
       } catch (err) {
         console.error(err);
       } finally {

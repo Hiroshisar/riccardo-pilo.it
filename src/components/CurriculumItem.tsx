@@ -24,9 +24,11 @@ function CurriculumItem({ item }: { item: curriculumDataType }) {
           ))}
         </ul>
       ) : (
-        <a href={item.link} target="_blank">
-          My Open Badge
-        </a>
+        item.link && (
+          <a href={item.link} target="_blank">
+            My Open Badge
+          </a>
+        )
       )}
     </div>
   );

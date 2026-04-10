@@ -23,7 +23,7 @@ function Skills() {
           <div className="font-bold">COMPETENZE</div>
           <div>
             {curriculumSkillsData.competences.map((comp) => (
-              <div className="mt-3">
+              <div key={comp.title} className="mt-3">
                 <div className="font-semibold">{comp.title}:</div>
                 <div>{comp.body}</div>
               </div>
